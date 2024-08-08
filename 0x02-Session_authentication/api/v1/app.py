@@ -70,7 +70,7 @@ def forbidden(error) -> str:
 @app.before_request
 def before_request() -> str:
     """
-    Handler before each request to validate authentication
+    Handler before each request to validate authentication.
     """
     if auth is None:
         return

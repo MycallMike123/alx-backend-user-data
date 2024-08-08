@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
-"""
-Module of Users views
+""" Module of Users views
 """
 from api.v1.views import app_views
 from flask import abort, jsonify, request
@@ -13,7 +12,7 @@ def view_all_users() -> str:
     """
     GET /api/v1/users
     Return:
-      A list of all User objects JSON represented
+      - list of all User objects JSON represented
     """
     all_users = [user.to_json() for user in User.all()]
     return jsonify(all_users)
@@ -24,7 +23,7 @@ def view_one_user(user_id: str = None) -> str:
     """
     GET /api/v1/users/:id
     Path parameter:
-      User ID
+      - User ID
     Return:
       1 User object JSON represented
       2 404 if the User ID doesn't exist
@@ -47,7 +46,7 @@ def delete_user(user_id: str = None) -> str:
     """
     DELETE /api/v1/users/:id
     Path parameter:
-     User ID
+      - User ID
     Return:
       1 empty JSON is the User has been correctly deleted
       2 404 if the User ID doesn't exist
@@ -66,10 +65,10 @@ def create_user() -> str:
     """
     POST /api/v1/users/
     JSON body:
-       email
-       password
-       last_name (optional)
-       first_name (optional)
+      - email
+      - password
+      - last_name (optional)
+      - first_name (optional)
     Return:
       1 User object JSON represented
       2 400 if can't create the new User
@@ -105,10 +104,10 @@ def update_user(user_id: str = None) -> str:
     """
     PUT /api/v1/users/:id
     Path parameter:
-       User ID
+      - User ID
     JSON body:
-       last_name (optional)
-       first_name (optional)
+      - last_name (optional)
+      - first_name (optional)
     Return:
       1 User object JSON represented
       2 404 if the User ID doesn't exist
