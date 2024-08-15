@@ -40,7 +40,7 @@ class Auth:
 
     def register_user(self, email: str, password: str) -> User:
         """
-        Register a new user by hashing the password and 
+        Register a new user by hashing the password and
         adding the user to the database
         """
         try:
@@ -89,7 +89,7 @@ class Auth:
 
     def get_user_from_session_id(self, session_id: str) -> User:
         """
-        Takws a session ID and returns the 
+        Takws a session ID and returns the
         corresponding user, if session ID is valid
         """
         if session_id is None:
